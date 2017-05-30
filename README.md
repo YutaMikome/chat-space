@@ -20,11 +20,11 @@
 
 ## users table ##
 
+deviseを使用して作成
+
 | Column     | Type        | Options                              |
 |:-----------|:------------|:-------------------------------------|
 | name       | string      |index: true, null: false, unique: true|
-| address    | string      |null: false, unique: true             |
-| password   | integer     |null: false, unique: true             |
 
 ### Association ###
 
