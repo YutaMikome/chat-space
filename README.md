@@ -8,8 +8,8 @@
 |:-----------|:------------|:----------------|
 | body       | text        |null: false      |
 | image      | string      |                 |
-| group_id   | integer     |foreign_key: true|
-| user_id    | integer     |foreign_key: true|
+| group_id   | references  |foreign_key: true|
+| user_id    | references  |foreign_key: true|
 | timestamps | integer     |null: false      |
 
 ### Association ###
@@ -24,6 +24,8 @@
 | Column     | Type        | Options                              |
 |:-----------|:------------|:-------------------------------------|
 | name       | string      |index: true, null: false, unique: true|
+| address    | string      |null: false, unique: true             |
+| password   | integer     |null: false, unique: true             |
 
 ### Association ###
 
@@ -48,12 +50,13 @@
 
 - has_many :messages
 
+
 ## group_users table ##
 
 | Column     | Type        | Options         |
 |:-----------|:------------|:----------------|
-| group_id   | integer     |foreign_key: true|
-| user_id    | integer     |foreign_key: true|
+| group_id   | references  |foreign_key: true|
+| user_id    | references  |foreign_key: true|
 
 ### Association ###
 
