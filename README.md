@@ -4,12 +4,12 @@
 
 ## messages table ##
 
-| Column     | Type        | Options         |
-|:-----------|:------------|:----------------|
-| body       | text        |null: false      |
-| image      | string      |                 |
-| group_id   | references  |foreign_key: true|
-| user_id    | references  |foreign_key: true|
+| Column     | Type        | Options                      |
+|:-----------|:------------|:-----------------------------|
+| body       | text        |null: false                   |
+| image      | string      |                              |
+| group_id   | references  |foreign_key: true, index: true|
+| user_id    | references  |foreign_key: true, index: true|
 
 ### Association ###
 
@@ -52,10 +52,10 @@ deviseを使用して作成
 
 ## group_users table ##
 
-| Column     | Type        | Options         |
-|:-----------|:------------|:----------------|
-| group_id   | references  |foreign_key: true|
-| user_id    | references  |foreign_key: true|
+| Column     | Type        | Options                      |
+|:-----------|:------------|:-----------------------------|
+| group_id   | references  |foreign_key: true, index: true|
+| user_id    | references  |foreign_key: true, index: true|
 
 ### Association ###
 
