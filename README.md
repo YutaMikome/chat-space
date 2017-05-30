@@ -1,8 +1,8 @@
 
-#DB設計#
+# DB設計 #
 
 
-##messages table##
+## messages table ##
 
 | Column     | Type        | Options         |
 |:-----------|:------------|:----------------|
@@ -12,49 +12,51 @@
 | user_id    | integer     |foreign_key: true|
 | timestamps | integer     |null: false      |
 
-###Association###
+### Association ###
 
--belongs_to :user
+- belongs_to :user
 
--belongs_to :group
+- belongs_to :group
 
 
-##users table##
+## users table ##
 
 | Column     | Type        | Options                              |
 |:-----------|:------------|:-------------------------------------|
 | name       | string      |index: true, null: false, unique: true|
 
-###Association###
+### Association ###
 
--has_many :massages
+- has_many :massages
 
--has_many :group_users
+- has_many :group_users
 
--has_many :groups, through: group_users
+- has_many :groups, through: group_users
 
 
-##groups table##
+## groups table ##
+
 | Column     | Type        | Options                 |
 |:-----------|:------------|:------------------------|
 | name       | string      |null: false, unique: ture|
 
-###Association###
+### Association ###
 
--has_many :users
+- has_many :users
 
--has_many :group_users
+- has_many :group_users
 
--has_many :messages
+- has_many :messages
 
-##group_users table##
+## group_users table ##
+
 | Column     | Type        | Options         |
 |:-----------|:------------|:----------------|
 | group_id   | integer     |foreign_key: true|
 | user_id    | integer     |foreign_key: true|
 
-###Association###
+### Association ###
 
--belongs_to :user
+- belongs_to :user
 
--belongs_to :group
+- belongs_to :group
