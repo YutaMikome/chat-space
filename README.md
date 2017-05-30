@@ -10,7 +10,6 @@
 | image      | string      |                 |
 | group_id   | references  |foreign_key: true|
 | user_id    | references  |foreign_key: true|
-| timestamps | integer     |null: false      |
 
 ### Association ###
 
