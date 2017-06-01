@@ -1,0 +1,47 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+  %body
+    %header チャットグループが作成されました。
+    .side-bar
+      .side-bar__user-bar
+        %i.fa.fa-cog{"aria-hidden" => "true"}
+        %i.fa.fa-edit{"aria-hidden" => "true"}
+
+        .side-bar__user-name sample
+      .side-bar__group-bar
+        .side-bar__group-name group1
+        .side-bar__group-message まだメッセージはありません
+
+        .side-bar__group-name group2
+        .side-bar__group-message あなたには誰からもメッセージはありません
+
+        .side-bar__group-name group3
+        .side-bar__group-message (´；ω；｀)ﾌﾞﾜｯ
+
+    .chat-screen
+      .chat-screen__group-infomation
+        .chat-screen__edit-button Edit
+        .chat-screen__group-name sample group
+        .chat-screen__group-create_user Members: a
+
+      .chat-screen__chat-area
+        .chat-screen__message-name UserName1
+        .chat-screen__message-time 2017/6/1 11:30:18
+        .chat-screen__message haha! zenzendekinai...warota!
+
+        .chat-screen__message-name UserName2
+        .chat-screen__message-time 2017/6/1 13:51:21
+        .chat-screen__message すすまない…(´・ω・｀)
+
+        .chat-screen__message-name UserName3
+        .chat-screen__message-time 2017/6/1 15:43:09
+        .chat-screen__message (´；ω；｀)ﾌﾞﾜｯ
+
+      .chat-screen__posting-message-area
+        .chat-screen__posting-message-box
+          うああああああああああ！！！！
+          %i.fa.fa-picture-o{"aria-hidden" => "true"}
+        .chat-screen__posting-message-send-button Send
+    %footer
