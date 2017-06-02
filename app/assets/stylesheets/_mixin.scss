@@ -1,0 +1,20 @@
+@mixin aicon-style() {
+  color: $aicon-text-color;
+  font-size: 20px;
+  float: right;
+  padding-top: 45px;
+  padding-right: 20px;
+}
+
+@mixin group-message-style() {
+  padding-top: 5px;
+  padding-bottom: 40px;
+  font-size: 11px;
+  color: $aicon-text-color;
+}
+
+@mixin group-name-style() {
+  padding-top: 20px;
+  font-size: 15px;
+  color: $aicon-text-color;
+}

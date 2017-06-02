@@ -1,0 +1,133 @@
+header {
+  background-color: #38AEF0;
+  color: white;
+  text-align: center;
+  height: $header-height;
+}
+
+.side {
+  width: 300px;
+  float: left;
+  &__user {
+    background-color: #253141;
+    height: $side-user-bar-height;
+    .fa.fa-cog {
+      @include aicon-style();
+      padding-right: 20px;
+    }
+    .fa.fa-edit {
+      @include aicon-style();
+      padding-right: 10px;
+    }
+    &__user-name {
+      color: $aicon-text-color;
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 40px;
+      padding-left: 20px;
+    }
+  }
+
+  .side__group {
+    height: $side-group-bar-height;
+    background-color: #2f3e51;
+    padding-left: 20px;
+    &__name {
+      @include group-name-style();
+    }
+    &__message {
+      @include group-message-style();
+    }
+  }
+}
+
+.chat-screen {
+  background-color: #AAAAAA;
+  width: calc(100vw - 300px);
+  float: left;
+  &__group {
+    height: $group-infomation-height;
+    padding-left: 40px;
+    padding-right:40px;
+    border-bottom: solid 2px #eeeeee;
+    &__edit-btn {
+      margin-top: 28px;
+      padding-right: 20px;
+      padding-left: 20px;
+      height: 40px;
+      border: solid;
+      border-width: 2px;
+      border-color: #38AEF0;
+      line-height: 40px;
+      text-align: center;
+      color: #38AEF0;
+      float: right;
+    }
+    &__name {
+      padding-top: 35px;
+      font-size: 20px;
+      color: #333333;
+    }
+    &__create-user {
+      padding-top: 15px;
+      font-size: 12px;
+      color: $Light-color;
+    }
+  }
+
+  &__chat-area {
+    height: $chat-area-height;
+    padding-left: 40px;
+    padding-top: 46px;
+    &__message-name {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+      padding-right: 10px;
+    }
+    &__message-time {
+      font-size: 12px;
+      color: $Light-color;
+      padding-left: 10px;
+      line-height: 25px;
+    }
+    &__message {
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__posting-area {
+    background-color: #DBDBDB;
+    height: $posting-message-area-hright;
+    padding-left: 40px;
+    padding-top: 20px;
+    &__message-box {
+      float: left;
+      background-color: gray;
+      height: 50px;
+      width: 940px;
+      text-align: 10px;
+      line-height: 50px;
+      color: $Light-color;
+      .fa-picture-o {
+        float: right;
+        padding-right: 10px;
+        padding-top: 15px;
+        font-size: 20px;
+        color: $aicon-text-color;
+      }
+    }
+    &__message-send-btn {
+      float: right;
+      background-color: #38AEF0;
+      height: 50px;
+      width: 100px;
+      margin-right: 40px;
+      margin-left: 15px;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+    }
+  }
+}
