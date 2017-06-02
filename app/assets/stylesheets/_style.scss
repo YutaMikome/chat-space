@@ -1,5 +1,5 @@
-@import "variable";
-@import "mixin";
+// @import "variable";
+// @import "mixin";
 
 header {
   background-color: #38AEF0;
@@ -8,10 +8,10 @@ header {
   height: $header-height;
 }
 
-.side-bar {
+.side {
   width: 300px;
   float: left;
-  .side-bar__user-bar {
+  &__user {
     background-color: #253141;
     height: $side-user-bar-height;
     .fa.fa-cog {
@@ -22,7 +22,7 @@ header {
       @include aicon-style();
       padding-right: 10px;
     }
-    .side-bar__user-name {
+    &__user-name {
       color: $aicon-text-color;
       font-size: 16px;
       font-weight: bold;
@@ -31,26 +31,14 @@ header {
     }
   }
 
-  .side-bar__group-bar {
+  .side__group {
     height: $side-group-bar-height;
     background-color: #2f3e51;
     padding-left: 20px;
-    .side-bar__group-name {
+    &__name {
       @include group-name-style();
     }
-    .side-bar__group-message {
-      @include group-message-style();
-    }
-    .side-bar__group-name {
-      @include group-name-style();
-    }
-    .side-bar__group-message {
-      @include group-message-style();
-    }
-    .side-bar__group-name {
-      @include group-name-style();
-    }
-    .side-bar__group-message {
+    &__message {
       @include group-message-style();
     }
   }
@@ -60,12 +48,12 @@ header {
   background-color: #AAAAAA;
   width: calc(100vw - 300px);
   float: left;
-  .chat-screen__group-infomation {
+  &__group {
     height: $group-infomation-height;
     padding-left: 40px;
     padding-right:40px;
     border-bottom: solid 2px #eeeeee;
-    .chat-screen__edit-button {
+    &__edit-btn {
       margin-top: 28px;
       padding-right: 20px;
       padding-left: 20px;
@@ -78,46 +66,46 @@ header {
       color: #38AEF0;
       float: right;
     }
-    .chat-screen__group-name {
+    &__name {
       padding-top: 35px;
       font-size: 20px;
       color: #333333;
     }
-    .chat-screen__group-create_user {
+    &__create-user {
       padding-top: 15px;
       font-size: 12px;
       color: $Light-color;
     }
   }
 
-  .chat-screen__chat-area {
+  &__chat-area {
     height: $chat-area-height;
     padding-left: 40px;
     padding-top: 46px;
-    .chat-screen__message-name {
+    &__message-name {
       font-size: 16px;
       font-weight: bold;
       float: left;
       padding-right: 10px;
     }
-    .chat-screen__message-time {
+    &__message-time {
       font-size: 12px;
       color: $Light-color;
       padding-left: 10px;
       line-height: 25px;
     }
-    .chat-screen__message {
+    &__message {
       padding-top: 10px;
       padding-bottom: 40px;
     }
   }
 
-  .chat-screen__posting-message-area {
+  &__posting-area {
     background-color: #DBDBDB;
     height: $posting-message-area-hright;
     padding-left: 40px;
     padding-top: 20px;
-    .chat-screen__posting-message-box {
+    &__message-box {
       float: left;
       background-color: gray;
       height: 50px;
@@ -133,7 +121,7 @@ header {
         color: $aicon-text-color;
       }
     }
-    .chat-screen__posting-message-send-button {
+    &__message-send-btn {
       float: right;
       background-color: #38AEF0;
       height: 50px;
