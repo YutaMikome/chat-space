@@ -1,12 +1,11 @@
-$aicon-text-color: #FFFFFF;
-$Light-color: #999999;
-
+@import "variable";
+@import "mixin";
 
 header {
   background-color: #38AEF0;
   color: white;
   text-align: center;
-  height: 4vh;
+  height: $header-height;
 }
 
 .side-bar {
@@ -14,19 +13,13 @@ header {
   float: left;
   .side-bar__user-bar {
     background-color: #253141;
-    height: 14vh;
+    height: $side-user-bar-height;
     .fa.fa-cog {
-      color: $aicon-text-color;
-      font-size: 20px;
-      float: right;
-      padding-top: 45px;
+      @include aicon-style();
       padding-right: 20px;
     }
     .fa.fa-edit {
-      color: $aicon-text-color;
-      font-size: 20px;
-      float: right;
-      padding-top: 45px;
+      @include aicon-style();
       padding-right: 10px;
     }
     .side-bar__user-name {
@@ -34,44 +27,31 @@ header {
       font-size: 16px;
       font-weight: bold;
       padding-top: 40px;
+      padding-left: 20px;
     }
   }
 
   .side-bar__group-bar {
-    height: 82vh;
+    height: $side-group-bar-height;
     background-color: #2f3e51;
+    padding-left: 20px;
     .side-bar__group-name {
-      padding-top: 20px;
-      font-size: 15px;
-      color: $aicon-text-color;
+      @include group-name-style();
     }
     .side-bar__group-message {
-      padding-top: 5px;
-      font-size: 11px;
-      color: $aicon-text-color;
-      padding-bottom: 40px;
+      @include group-message-style();
     }
     .side-bar__group-name {
-      padding-top: 20px;
-      font-size: 15px;
-      color: $aicon-text-color;
+      @include group-name-style();
     }
     .side-bar__group-message {
-      padding-top: 5px;
-      font-size: 11px;
-      color: $aicon-text-color;
-      padding-bottom: 40px;
+      @include group-message-style();
     }
     .side-bar__group-name {
-      padding-top: 20px;
-      font-size: 15px;
-      color: $aicon-text-color;
+      @include group-name-style();
     }
     .side-bar__group-message {
-      padding-top: 5px;
-      font-size: 11px;
-      color: $aicon-text-color;
-      padding-bottom: 40px;
+      @include group-message-style();
     }
   }
 }
@@ -81,7 +61,7 @@ header {
   width: calc(100vw - 300px);
   float: left;
   .chat-screen__group-infomation {
-    height: 14vh;
+    height: $group-infomation-height;
     padding-left: 40px;
     padding-right:40px;
     border-bottom: solid 2px #eeeeee;
@@ -106,12 +86,12 @@ header {
     .chat-screen__group-create_user {
       padding-top: 15px;
       font-size: 12px;
-      color: #999999;
+      color: $Light-color;
     }
   }
 
   .chat-screen__chat-area {
-    height: calc(69vh - 46px);
+    height: $chat-area-height;
     padding-left: 40px;
     padding-top: 46px;
     .chat-screen__message-name {
@@ -134,7 +114,7 @@ header {
 
   .chat-screen__posting-message-area {
     background-color: #DBDBDB;
-    height: calc(13vh - 20px);
+    height: $posting-message-area-hright;
     padding-left: 40px;
     padding-top: 20px;
     .chat-screen__posting-message-box {
@@ -166,5 +146,3 @@ header {
     }
   }
 }
-
-
