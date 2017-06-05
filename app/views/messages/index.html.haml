@@ -6,9 +6,9 @@
     %header チャットグループが作成されました。
     .side
       .side__user
-        %i.fa.fa-cog{"aria-hidden" => "true"}
-        = link_to edit_user_path(current_user.id) do
-          %i.fa.fa-edit{"aria-hidden" => "true"}
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog{"aria-hidden" => "true"}
+        %i.fa.fa-edit{"aria-hidden" => "true"}
 
         .side__user__user-name
           = current_user.name
