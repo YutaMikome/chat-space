@@ -16,6 +16,7 @@ module ChatSpace
     config.generators.javascripts    = false
     config.generators.helper         = false
     config.generators.test_framework = false
+    config.i18n.default_locale       = :ja
   end
 end
 
