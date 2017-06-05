@@ -4,8 +4,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(name:user_params[:name],email:user_params[:email])
-    redirect_to messages_path
+
+    if @user.update(user_params)
+      redirect_to :root
+    else
+      redirect_to action: :edit
+    end
   end
 
   private
