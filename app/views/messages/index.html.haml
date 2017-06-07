@@ -7,7 +7,8 @@
       .side__user
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog{"aria-hidden" => "true"}
-        %i.fa.fa-edit{"aria-hidden" => "true"}
+        = link_to new_group_path do
+          %i.fa.fa-edit{"aria-hidden" => "true"}
 
         .side__user__user-name
           = current_user.name
@@ -23,7 +24,8 @@
 
     .chat-screen
       .chat-screen__group
-        .chat-screen__group__edit-btn Edit
+        = link_to edit_group_path(current_user) do
+          .chat-screen__group__edit-btn Edit
         .chat-screen__group__name sample group
         .chat-screen__group__create-user Members: a
 
