@@ -28,13 +28,7 @@
         %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
       .chat-group-form__field--right
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        #chat-group-users
-        #chat-group-user-22.chat-group-user.clearfix
-          %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-          %p.chat-group-user__name
-            = form_for @group do |f|
-              = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
-                = b.label { b.check_box + b.text }
+        = render 'groups/collection_check_boxes'
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
