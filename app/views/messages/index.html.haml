@@ -1,47 +1,29 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-  %body
-    .side
-      .side__user
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog{"aria-hidden" => "true"}
-        = link_to new_group_path do
-          %i.fa.fa-edit{"aria-hidden" => "true"}
+= render 'shared/side_bar'
 
-        .side__user__user-name
-          = current_user.name
-      .side__group
-        - @groups.each do |group|
-          / = link_to group_messages_path do
-          .side__group__name
-            = group.name
-          .side__group__message まだメッセージはありません
+.chat-screen
+  .chat-screen__group
+    = link_to edit_group_path(current_user) do
+      .chat-screen__group__edit-btn Edit
+    .chat-screen__group__name bbbbb
+    .chat-screen__group__create-user
+      = "Members: #{current_user.name}"
 
-    .chat-screen
-      .chat-screen__group
-        = link_to edit_group_path(current_user) do
-          .chat-screen__group__edit-btn Edit
-        .chat-screen__group__name sample group
-        .chat-screen__group__create-user Members: a
+  .chat-screen__chat-area
+    .chat-screen__chat-area__message-name UserName1
+    .chat-screen__chat-area__message-time 2017/6/1 11:30:18
+    .chat-screen__chat-area__message haha! zenzendekinai...warota!
 
-      .chat-screen__chat-area
-        .chat-screen__chat-area__message-name UserName1
-        .chat-screen__chat-area__message-time 2017/6/1 11:30:18
-        .chat-screen__chat-area__message haha! zenzendekinai...warota!
+    .chat-screen__chat-area__message-name UserName2
+    .chat-screen__chat-area__message-time 2017/6/1 13:51:21
+    .chat-screen__chat-area__message すすまない…(´・ω・｀)
 
-        .chat-screen__chat-area__message-name UserName2
-        .chat-screen__chat-area__message-time 2017/6/1 13:51:21
-        .chat-screen__chat-area__message すすまない…(´・ω・｀)
+    .chat-screen__chat-area__message-name UserName3
+    .chat-screen__chat-area__message-time 2017/6/1 15:43:09
+    .chat-screen__chat-area__message (´；ω；｀)ﾌﾞﾜｯ
 
-        .chat-screen__chat-area__message-name UserName3
-        .chat-screen__chat-area__message-time 2017/6/1 15:43:09
-        .chat-screen__chat-area__message (´；ω；｀)ﾌﾞﾜｯ
-
-      .chat-screen__posting-area
-        .chat-screen__posting-area__message-box
-          type a message
-          %i.fa.fa-picture-o{"aria-hidden" => "true"}
-        .chat-screen__posting-area__message-send-btn Send
-    %footer
+  .chat-screen__posting-area
+    .chat-screen__posting-area__message-box
+      type a message
+      %i.fa.fa-picture-o{"aria-hidden" => "true"}
+    .chat-screen__posting-area__message-send-btn Send
+%footer
