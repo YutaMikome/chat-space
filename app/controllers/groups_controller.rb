@@ -1,5 +1,10 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_group, only:[:edit,:update]
+
+  def index
+    @groups = current_user.groups
+  end
 
   def new
     @group = Group.new
