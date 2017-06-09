@@ -1,5 +1,5 @@
 @mixin aicon-style() {
-  color: $aicon-text-color;
+  color: $white-color;
   font-size: 20px;
   float: right;
   padding-top: 45px;
@@ -10,11 +10,11 @@
   padding-top: 5px;
   padding-bottom: 40px;
   font-size: 11px;
-  color: $aicon-text-color;
+  color: $white-color;
 }
 
 @mixin group-name-style() {
   padding-top: 20px;
   font-size: 15px;
-  color: $aicon-text-color;
+  color: $white-color;
 }

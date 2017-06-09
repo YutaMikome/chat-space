@@ -18,7 +18,7 @@ body {
       padding-right: 10px;
     }
     &__user-name {
-      color: $aicon-text-color;
+      color: $white-color;
       font-size: 16px;
       font-weight: bold;
       padding-top: 40px;
@@ -40,10 +40,11 @@ body {
 }
 
 .chat-screen {
-  background-color: #AAAAAA;
+  background-color: #FAFAFA;
   width: calc(100vw - 300px);
   float: left;
   &__group {
+    background-color: #FFFFFF;
     height: $group-infomation-height;
     padding-left: 40px;
     padding-right:40px;
@@ -102,7 +103,7 @@ body {
     padding-top: 20px;
     &__message-box {
       float: left;
-      background-color: gray;
+      background-color: $white-color;
       height: 50px;
       width: 940px;
       text-align: 10px;
@@ -113,7 +114,7 @@ body {
         padding-right: 10px;
         padding-top: 15px;
         font-size: 20px;
-        color: $aicon-text-color;
+        color: $white-color;
       }
     }
     &__message-send-btn {
@@ -125,7 +126,7 @@ body {
       margin-left: 15px;
       text-align: center;
       line-height: 50px;
-      color: white;
+      color: $white-color;
     }
   }
 }
