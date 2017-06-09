@@ -4,7 +4,19 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+
+    if @group.update(group_params)
+      flash[:notice] = "チャットグループが更新されました。"
+      redirect_to root_path
+    else
+      flash[:alert] = "チャットグループの更新に失敗しました。"
+      render :edit
+    end
   end
 
   def create
