@@ -2,6 +2,6 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 end
