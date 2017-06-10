@@ -22,8 +22,9 @@
     .chat-screen__chat-area__message (´；ω；｀)ﾌﾞﾜｯ
 
   .chat-screen__posting-area
-    .chat-screen__posting-area__message-box
-      type a message
-      %i.fa.fa-picture-o{"aria-hidden" => "true"}
-    .chat-screen__posting-area__message-send-btn Send
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: "chat-screen__posting-area__message-box", placeholder: " type a message"
+      = f.label "image", { class: "fa fa-picture-o"} do
+        = f.file_field :image, style: "display: none;"
+      = f.submit "Send", class: "chat-screen__posting-area__message-send-btn"
 %footer
