@@ -7,7 +7,9 @@
     .chat-screen__group__name
       = @group.name
     .chat-screen__group__create-user
-      = "Members: #{current_user.name}"
+      Members:
+      - @group.users.each do |user|
+        =user.name
 
   .chat-screen__chat-area
     - @group_message.each do |msg|
