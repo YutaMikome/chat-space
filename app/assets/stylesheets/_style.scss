@@ -78,6 +78,7 @@ body {
     height: $chat-area-height;
     padding-left: 40px;
     padding-top: 46px;
+    overflow: auto;
     &__message-name {
       font-size: 16px;
       font-weight: bold;
@@ -101,22 +102,30 @@ body {
     height: $posting-message-area-hright;
     padding-left: 40px;
     padding-top: 20px;
+    position: relative;
+    .fa-picture-o {
+        position: absolute;
+        line-height: 48px;
+        margin-right: 10px;
+        height: 46px;
+        width: 30px;
+        margin: 20px 0;
+        top: 0;
+        left: 790px;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
     &__message-box {
-      float: left;
       background-color: $white-color;
       height: 50px;
       width: 940px;
       text-align: 10px;
       line-height: 50px;
       color: $Light-color;
-      .fa-picture-o {
-        float: right;
-        padding-right: 10px;
-        padding-top: 15px;
-        font-size: 20px;
-        color: $white-color;
-      }
+      position: relative;
     }
+    
     &__message-send-btn {
       float: right;
       background-color: #38AEF0;

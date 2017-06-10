@@ -4,26 +4,23 @@
   .chat-screen__group
     = link_to edit_group_path(current_user) do
       .chat-screen__group__edit-btn Edit
-    .chat-screen__group__name bbbbb
+    .chat-screen__group__name
+      = @group.name
     .chat-screen__group__create-user
       = "Members: #{current_user.name}"
 
   .chat-screen__chat-area
-    .chat-screen__chat-area__message-name UserName1
-    .chat-screen__chat-area__message-time 2017/6/1 11:30:18
-    .chat-screen__chat-area__message haha! zenzendekinai...warota!
-
-    .chat-screen__chat-area__message-name UserName2
-    .chat-screen__chat-area__message-time 2017/6/1 13:51:21
-    .chat-screen__chat-area__message すすまない…(´・ω・｀)
-
-    .chat-screen__chat-area__message-name UserName3
-    .chat-screen__chat-area__message-time 2017/6/1 15:43:09
-    .chat-screen__chat-area__message (´；ω；｀)ﾌﾞﾜｯ
-
+    - @group_message.each do |msg|
+      .chat-screen__chat-area__message-name
+        = current_user.name
+      .chat-screen__chat-area__message-time
+        = msg.created_at.strftime("%Y/%m/%d %H:%M:%S")
+      .chat-screen__chat-area__message
+        = msg.body
   .chat-screen__posting-area
-    .chat-screen__posting-area__message-box
-      type a message
-      %i.fa.fa-picture-o{"aria-hidden" => "true"}
-    .chat-screen__posting-area__message-send-btn Send
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: "chat-screen__posting-area__message-box", placeholder: " type a message"
+      = f.label "image", { class: "fa fa-picture-o"} do
+        = f.file_field :image, style: "display: none;"
+      = f.submit "Send", class: "chat-screen__posting-area__message-send-btn"
 %footer
