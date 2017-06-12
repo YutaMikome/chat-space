@@ -17,4 +17,10 @@
           = link_to group_messages_path(group.id) do
             .side__group__name
               = group.name
-          .side__group__message まだメッセージはありません。
+          .side__group__message
+            - if group.messages.blank?
+              %p まだメッセージはありません。
+            - elsif group.messages.last.image.present?
+              %p 画像を送信しました。
+            - else
+              = group.messages.last.body

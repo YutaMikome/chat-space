@@ -2,7 +2,7 @@
 
 .chat-screen
   .chat-screen__group
-    = link_to edit_group_path(current_user) do
+    = link_to edit_group_path(@group) do
       .chat-screen__group__edit-btn Edit
     .chat-screen__group__name
       = @group.name
@@ -14,11 +14,13 @@
   .chat-screen__chat-area
     - @group_message.each do |msg|
       .chat-screen__chat-area__message-name
-        = current_user.name
+        = msg.user.name
       .chat-screen__chat-area__message-time
         = msg.created_at.strftime("%Y/%m/%d %H:%M:%S")
       .chat-screen__chat-area__message
         = msg.body
+      .chat-screen__chat-area__image
+        = image_tag msg.image
   .chat-screen__posting-area
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: "chat-screen__posting-area__message-box", placeholder: " type a message"
