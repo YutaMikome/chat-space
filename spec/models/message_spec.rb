@@ -38,5 +38,10 @@ describe Message do
         expect(message.errors[:user_id]).to include("を入力してください")
       end
     end
+
+    context '投稿成功時フラッシュメッセージが表示されているか'
+      it ""
+      end
+    end
   end
 end
