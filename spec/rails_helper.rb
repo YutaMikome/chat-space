@@ -35,6 +35,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -54,4 +55,19 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include FactoryGirl::Syntax::Methods
+  # paperclip file uploadテスト用
+  # rspec内で、ファイルアップロードのテストに使用する
+  config.include ActionDispatch::TestProcess
+
+  # factoryGirl内での呼び出し
+  FactoryGirl::SyntaxRunner.class_eval do
+    include ActionDispatch::TestProcess
+  end
+
+  # fixtureのパス指定
+  # ファイルアップロードテストする際のアップするファイルを指定するパスをfixtures以下から省略して指定
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
 end
