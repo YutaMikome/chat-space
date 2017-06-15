@@ -24,6 +24,5 @@ class MessagesController < ApplicationController
   def get_group
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
-    @group_message = Group.find(params[:group_id]).messages
   end
 end
