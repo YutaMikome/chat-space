@@ -12,7 +12,7 @@
         =user.name
 
   .chat-screen__chat-area
-    - @group_message.each do |msg|
+    - @group.messages.each do |msg|
       .chat-screen__chat-area__message-name
         = msg.user.name
       .chat-screen__chat-area__message-time
