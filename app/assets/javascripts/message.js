@@ -6,7 +6,7 @@ $(function() {
     var time = '<p class="chat-screen__chat-area__message-time">'+ message.time + '<p>';
     var body = '<p class ="chat-screen__chat-area__message">' + message.body +'</p>';
     if(message.image) {
-      var image_url = '<img src = "' + message.image + '">';
+      var image_tag = '<img src = "' + message.image + '">';
       var image = '<p class ="chat-screen__chat-area__image">' + image_url +'</p>';
     } else {
       var image = '<p class ="chat-screen__chat-area__image"></p>';
