@@ -6,10 +6,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @group.messages.new(message_params)
+    @message = Group.find(params[:group_id]).messages.new(message_params)
     if @message.save
-      flash[:notice] = "メッセージ投稿が完了しました。"
-      redirect_to group_messages_path
+      respond_to do |format|
+        format.html { redirect_to group_messages_path, notice: "メッセージが投稿されました" }
+        format.json
+      end
+      # flash[:notice] = "メッセージ投稿が完了しました。"
+      # redirect_to group_messages_path
     else
       flash[:alert] = "メッセージを入力してください。"
       render "index"

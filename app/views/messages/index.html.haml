@@ -22,7 +22,7 @@
       .chat-screen__chat-area__image
         = image_tag msg.image
   .chat-screen__posting-area
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: { class: 'form message-form' } do |f|
       = f.text_field :body, class: "chat-screen__posting-area__message-box", placeholder: " type a message"
       = f.label "image", { class: "fa fa-picture-o"} do
         = f.file_field :image, style: "display: none;"
