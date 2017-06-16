@@ -5,7 +5,7 @@ $(function() {
     var name = '<p class="chat-screen__chat-area__message-name">'+ message.name +'</p>';
     var time = '<p class="chat-screen__chat-area__message-time">'+ message.time + '<p>';
     var body = '<p class ="chat-screen__chat-area__message">' + message.body +'</p>';
-    if( message.image ) {
+    if(message.image) {
       var image_url = '<img src = "' + message.image + '">';
       var image = '<p class ="chat-screen__chat-area__image">' + image_url +'</p>';
     } else {
@@ -17,6 +17,7 @@ $(function() {
   $('.message-form'). on('submit', function(e){
     e.preventDefault();
     e.stopPropagation();
+    var $form = $('.message-form');
     var formData = new FormData ($(this).get(0));
     var url = $(this).attr("action");
     $.ajax ({
@@ -29,8 +30,7 @@ $(function() {
     })
     .done(function(message) {
       buildHTML(message);
-      // textField.val('');
-      $('.message-form')[0].reset();
+      $form[0].reset();
       $('.chat-screen__chat-area').animate({scrollTop: $('.chat-screen__chat-area')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
