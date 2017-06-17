@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  
+
   before_action :get_group, only:[:edit,:update]
 
   def index
