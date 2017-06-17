@@ -1,6 +1,0 @@
-#chat-group-users
-#chat-group-user-22.chat-group-user.clearfix
-  %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-  %p.chat-group-user__name
-    = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
-      = b.label { b.check_box + b.text }
