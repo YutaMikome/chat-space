@@ -18,10 +18,11 @@ $(function() {
     })
     .done(function(data){
       $('#user-search-result').find('li').remove();
-      $('#user-search-result').find('hr').remove();
+      var $result = $('#user-search-result');
+      $($result).find('hr').remove();
 
       $(data).each(function(i, user){
-        $('#user-search-result').append('<li>' + buildHTML(user) + '</li>');
+        $($result).append('<li>' + buildHTML(user) + '</li>');
       })
     })
     .fail(function() {
