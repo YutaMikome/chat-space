@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.search_user params[:keyword]
+    render json: @users
+  end
+
   def edit
   end
 
