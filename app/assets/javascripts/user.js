@@ -16,7 +16,7 @@ $(function() {
   }
 
   $(document).on('keyup', '#user-search-field', function(e){
-    var input = $.trim($(this).val());
+    var input = $(this).val();
     $.ajax({
       url: '/users',
       type: 'GET',
@@ -26,9 +26,8 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data){
-      $('.user-search-result').find('li').remove();
       var $result = $('.user-search-result');
-      $($result).find('hr').remove();
+      $($result).find('li').remove();
 
       $(data).each(function(i, user){
         $($result).append('<li>' + memberHTML(user) + '</li>');
