@@ -1,4 +1,3 @@
-// $(document).on('turbolinks:load', function(e){ //リロードしなくてもjsが動くようにする
 $(function() {
   function memberHTML(user) {
     var users_name = '<li>' + '<div class="chat-group-user clearfix">' +
