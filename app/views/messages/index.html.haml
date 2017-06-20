@@ -10,17 +10,17 @@
       Members:
       - @group.users.each do |user|
         =user.name
-
-  .chat-screen__chat-area
-    - @group.messages.each do |msg|
-      .chat-screen__chat-area__message-name
-        = msg.user.name
-      .chat-screen__chat-area__message-time
-        = msg.created_at.strftime("%Y/%m/%d %H:%M:%S")
-      .chat-screen__chat-area__message
-        = msg.body
-      .chat-screen__chat-area__image
-        = image_tag msg.image
+  .parent
+    .chat-screen__chat-area
+      - @group.messages.each do |msg|
+        .chat-screen__chat-area__message-name
+          = msg.user.name
+        .chat-screen__chat-area__message-time
+          = msg.created_at.strftime("%Y/%m/%d %H:%M:%S")
+        .chat-screen__chat-area__message
+          = msg.body
+        .chat-screen__chat-area__image
+          = image_tag msg.image
   .chat-screen__posting-area
     = form_for [@group, @message], html: { class: 'form message-form' } do |f|
       = f.text_field :body, class: "chat-screen__posting-area__message-box", placeholder: " type a message"

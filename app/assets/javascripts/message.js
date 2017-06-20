@@ -1,18 +1,29 @@
 $(function() {
   function buildHTML(message) {
-    // var create_message = $(
-      // '<div class="chat-screen__chat-area">' +
     var name = '<p class="chat-screen__chat-area__message-name">'+ message.name +'</p>';
     var time = '<p class="chat-screen__chat-area__message-time">'+ message.time + '<p>';
     var body = '<p class ="chat-screen__chat-area__message">' + message.body +'</p>';
     if(message.image) {
       var image_tag = '<img src = "' + message.image + '">';
-      var image = '<p class ="chat-screen__chat-area__image">' + image_url +'</p>';
+      var image = '<p class ="chat-screen__chat-area__image">' + image_tag +'</p>';
     } else {
       var image = '<p class ="chat-screen__chat-area__image"></p>';
     };
     $('.chat-screen__chat-area').append(name, time, body, image);
   };
+
+  function build(message) {
+    var insertImage = '';
+    if (message.image) {
+      insertImage = `<img src="${message.image}">`;
+    }
+    var html = `
+        <p class="chat-screen__chat-area__message-name">${message.name}</p>
+        <p class="chat-screen__chat-area__message-time">${message.date}</p>
+        <p class="chat-screen__chat-area__message">${message.body}</p>
+        <p class="chat-screen__chat-area__image">${insertImage}</p>`;
+    return html
+  }
 
   $('.message-form'). on('submit', function(e){
     e.preventDefault();
@@ -35,6 +46,26 @@ $(function() {
     })
     .fail(function() {
       alert('error');
-    });
+    })
   });
+
+  setInterval(function() {
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        processData: false,
+        contentType: false,
+        dataType: 'json'
+      })
+      .done(function(json) {
+        var insertHTML = '';
+        json.messages.forEach(function(message) {
+          insertHTML += build(message);
+        });
+        $('.chat-screen__chat-area').html(insertHTML);
+      })
+      .fail(function(data) {
+        alert('自動更新に失敗しました');
+      });
+  } , 5 * 1000 );
 });
