@@ -13,7 +13,6 @@ $(function() {
   };
 
   function build(message) {
-    console.log("message:" + message)
     var insertImage = '';
     if (message.image) {
       insertImage = `<img src="${message.image}">`;
@@ -59,7 +58,6 @@ $(function() {
         dataType: 'json'
       })
       .done(function(json) {
-        console.log("jsonOK:");
         var insertHTML = '';
         json.messages.forEach(function(message) {
           insertHTML += build(message);
